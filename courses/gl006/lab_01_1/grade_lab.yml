@@ -1,0 +1,17 @@
+---
+- name: Grade lab 01_1 of GL006
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  become: false
+  tasks:
+  - name: Grading Step 1
+    include_role:
+      name: gl006_test_role
+    vars:
+      sample: sample1
+  - name: Grading Step 2
+    include_role:
+      name: gl006_test_role
+    vars:
+      sample: sample2
