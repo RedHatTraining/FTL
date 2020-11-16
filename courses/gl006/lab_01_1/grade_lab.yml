@@ -10,8 +10,12 @@
       name: gl006_test_role
     vars:
       sample: sample1
+  - debug:
+      msg: "45"
   - name: Grading Step 2
     include_role:
       name: gl006_test_role
     vars:
       sample: sample2
+  - debug:
+      msg: "50"
