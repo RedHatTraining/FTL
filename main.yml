@@ -1,29 +1,29 @@
 ---
-# - name: Run FTL Init role - initialize grading report data structures
-#   hosts: localhost
-#   gather_facts: false
-#   become: false
-#   tags:
-#     - ftl-init
-#
-#   roles:
-#
-#     - when: purpose == "grade_lab"
-#       name: ftl_run_init
+- name: Run FTL Init role - initialize grading report data structures
+  hosts: localhost
+  gather_facts: false
+  become: false
+  tags:
+    - ftl-init
+
+  roles:
+
+    - when: purpose == "grade_lab"
+      name: ftl_run_init
 
 - name: "Import and run the {{ purpose }} playbooks"
   import_playbook: "./courses/{{ course_id }}/lab_{{ lab_id }}/{{ purpose }}.yml"
   tags:
     - ftl-grade
 
-# - name: Run FTL finish role - generate reports and updates
-#   hosts: localhost
-#   gather_facts: false
-#   become: false
-#   tags:
-#     - ftl-finish
-#
-#   roles:
-#     - when: purpose == "grade_lab"
-#       name: ftl_run_finish
+- name: Run FTL finish role - generate reports and updates
+  hosts: localhost
+  gather_facts: false
+  become: false
+  tags:
+    - ftl-finish
+
+  roles:
+    - when: purpose == "grade_lab"
+      name: ftl_run_finish
 ...

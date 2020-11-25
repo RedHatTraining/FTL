@@ -3,5 +3,7 @@
 roles/ftl-injector
 .vagrant
 .DS_Store
-#.pre-commit-config.yaml 
+#.pre-commit-config.yaml
 #.yamllint
+artifacts
+env
