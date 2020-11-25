@@ -5,16 +5,16 @@
   gather_facts: false
   become: false
   tasks:
-  - name: Grading Step 1
+  - name: Checking httpd
     include_role:
       name: gl006_test_role
-    vars:
-      sample: sample1
-  - name: Grading Step 2
+  - name: Checking service
     include_role:
       name: gl006_test_role
-    vars:
-      sample: sample2
-  - name: Grading Step 3
+  - name: Checking index.html
     fail:
-      msg: "Package not installed"
+      msg: "simulated failure"
+    ignore_errors: true
+  - name: Final check
+    include_role:
+      name: gl006_test_role2

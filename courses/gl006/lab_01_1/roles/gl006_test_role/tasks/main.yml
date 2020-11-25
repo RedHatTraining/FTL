@@ -4,8 +4,8 @@
     seconds: 1
 - name: Task 2
   pause:
-    seconds: 3
+    seconds: 1
 - name: Task 3
   pause:
-    seconds: 2
+    seconds: 1
 ...

@@ -1,0 +1,6 @@
+---
+- name: Simulate failure
+  set_fact:
+    success: false
+    msg: "simulated failure"
+...
